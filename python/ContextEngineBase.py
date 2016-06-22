@@ -4,11 +4,11 @@ import math
 import numpy as np
 import sys
 
-#sys.path.append("Security/Encrypt/")
+#sys.path.append("../python/Security/Encrypt/")
 #from encrypt import encrypt
 #from encrypt import rsaEncrypt
-#sys.path.remove("../Security/Encrypt/")
-#sys.path.append("Security/Decrypt/")
+#sys.path.remove("../python/Security/Encrypt/")
+#sys.path.append("../python/Security/Decrypt/")
 #from decrypt import rsaDecrypt
 #from decrypt import decrypt
 
@@ -126,25 +126,23 @@ class ContextEngineBase:
             outputValue = newOutputVector.pop();
             self.addSingleObservation(newInputVector, outputValue);
 
-    #  Returns the name of the file that contains the encrypted data, takes in 
+      #  Returns the name of the file that contains the encrypted data, takes in 
     #  name of the file containing key and name of the file to be encrypted
-    def encrypt(self, plainTextFile):
-        if len(self.key) != 0:
-            rsaEncrypt(self.key);
-            return encrypt(self.key, plainTextFile);
-
-        else:
-            return
+    #def encrypt(self, plainTextFile):
+    #    if len(self.key) != 0:
+    #        rsaEncrypt(self.key);
+    #        return encrypt(self.key, plainTextFile);
+    #    else:
+    #        return
             
     #  Returns the name of the file that contains the decrypted data, takes in 
     #  name of the file containing key and name of the file to be decrypted
-    def decrypt(self, encyptedFile):
-        if len(self.key) != 0:
-            rsaDecrypt(self.key);
-            return decrypt(self.key, encyptedFile);
-
-        else:
-            return
+    #def decrypt(self, encyptedFile):
+    #    if len(self.key) != 0:
+    #        rsaDecrypt(self.key);
+    #        return decrypt(self.key, encyptedFile);
+    #    else:   
+    #        return
 
     #  Train the coefficients on the existing observation matrix if there are
     #  enough observations.
